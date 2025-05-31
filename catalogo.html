@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HORQUILLAS BOHO</title>
+  <title>BOHO | Estilo Bohemio</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -41,6 +41,7 @@
       text-decoration: underline;
     }
 
+    /* CATÁLOGO */
     .catalogo {
       max-width: 1200px;
       margin: 40px auto;
@@ -123,6 +124,91 @@
       background-color: #ec407a;
     }
 
+    /* CARRITO */
+    .seccion.carrito {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #f5cfbd;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #f06292;
+    }
+
+    .seccion.carrito h2 {
+      color: #6d1b7b;
+      text-align: center;
+    }
+
+    #items-carrito {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    #items-carrito li {
+      background-color: white;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #f06292;
+    }
+
+    #items-carrito li button {
+      background-color: #ec407a;
+      padding: 5px 8px;
+      font-weight: normal;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    #items-carrito li button:hover {
+      background-color: #d81b60;
+    }
+
+    /* FORMULARIO CONTACTO */
+    .seccion {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #f5cfbd;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #f06292;
+    }
+
+    .seccion h2 {
+      color: #6d1b7b;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #e91e63;
+    }
+
     footer {
       background-color: #ffb4b4;
       text-align: center;
@@ -148,7 +234,7 @@
 </head>
 <body>
 
-  <header>
+<header>
     <h1>BOHO</h1>
     <p class="eslogan">"Tu estilo comienza desde el cabello"</p>
     <nav>
@@ -160,65 +246,145 @@
   </header>
 
   <main>
-    <section class="catalogo">
+    <section class="catalogo" id="catalogo">
       <h2>Catálogo</h2>
       <div class="productos">
         <div class="producto">
           <img src="img/horquilla_flor.webp" alt="Horquilla con flor" />
           <h3>Horquillas con flores</h3>
           <p>Color plata con flor y detalles negros.</p>
-          <p><strong>Precio: $50</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $50.00</strong></p>
+          <button data-nombre="Horquillas con flores" data-precio="50">Comprar</button>
         </div>
 
         <div class="producto">
           <img src="img/horquilla_espada.webp" alt="Horquilla en forma de espada" />
           <h3>Horquillas de espada</h3>
           <p>Diseño de espada con detalles plateados y rojo.</p>
-          <p><strong>Precio: $50</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $50.00</strong></p>
+          <button data-nombre="Horquillas de espada" data-precio="50">Comprar</button>
         </div>
 
         <div class="producto">
           <img src="img/horquilla_nudo.webp" alt="Horquilla con nudo" />
           <h3>Horquillas de nudo</h3>
           <p>Diseño elegante con nudo estilizado.</p>
-          <p><strong>Precio: $50</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $50.00</strong></p>
+          <button data-nombre="Horquillas de nudo" data-precio="50">Comprar</button>
         </div>
 
         <div class="producto">
           <img src="img/horquilla_luna.webp" alt="Horquilla de luna" />
           <h3>Horquillas de luna</h3>
           <p>Color negro con luna a juego.</p>
-          <p><strong>Precio: $40</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $40.00</strong></p>
+          <button data-nombre="Horquillas de luna" data-precio="40">Comprar</button>
         </div>
 
         <div class="producto">
           <img src="img/horquilla_mariposa.webp" alt="Horquilla de mariposa" />
           <h3>Horquillas de mariposa</h3>
           <p>Negro con mariposas azul y adornos.</p>
-          <p><strong>Precio: $50</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $50.00</strong></p>
+          <button data-nombre="Horquillas de mariposa" data-precio="50">Comprar</button>
         </div>
 
         <div class="producto">
           <img src="img/horquilla_estrella.webp" alt="Horquilla de estrella" />
           <h3>Horquillas de estrella</h3>
           <p>Color plata con estrella azul claro.</p>
-          <p><strong>Precio: $50</strong></p>
-          <button>Comprar</button>
+          <p><strong>Precio: $50.00</strong></p>
+          <button data-nombre="Horquillas de estrella" data-precio="50">Comprar</button>
         </div>
       </div>
+    </section>
+
+    <section class="seccion carrito" id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="items-carrito"></ul>
+      <p><strong>Total: $<span id="total">0.00</span></strong></p>
+    </section>
+
+    <section class="seccion" id="contacto">
+      <h2>Contáctanos</h2>
+      <p>Escríbenos para más información o para hacer tu pedido.</p>
+      <form id="form-contacto">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo" required />
+        <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </main>
 
   <footer>
     <p><strong>Teléfono:</strong> 664 333 3223</p>
     <p><a href="mailto:eimyquinterot15@gmail.com">Correo: eimyquinterot15@gmail.com</a></p>
-    <p>&copy;2025 BOHO. Todos los derechos reservados.</p>
+    <p>&copy; 2025 BOHO. Todos los derechos reservados.</p>
   </footer>
+
+<script>
+  // Obtener carrito de localStorage o inicializar
+  function obtenerCarrito() {
+    const carritoJSON = localStorage.getItem('carrito');
+    return carritoJSON ? JSON.parse(carritoJSON) : [];
+  }
+
+  // Guardar carrito en localStorage
+  function guardarCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  // Actualizar vista del carrito
+  function actualizarCarrito() {
+    const carrito = obtenerCarrito();
+    const lista = document.getElementById('items-carrito');
+    const totalSpan = document.getElementById('total');
+    lista.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'Eliminar';
+      btnEliminar.onclick = () => {
+        carrito.splice(index, 1);
+        guardarCarrito(carrito);
+        actualizarCarrito();
+      };
+
+      li.appendChild(btnEliminar);
+      lista.appendChild(li);
+      total += item.precio;
+    });
+
+    totalSpan.textContent = total.toFixed(2);
+  }
+
+  // Agregar eventos a botones de compra
+  document.querySelectorAll('.producto button').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const nombre = boton.getAttribute('data-nombre');
+      const precio = parseFloat(boton.getAttribute('data-precio'));
+      const carrito = obtenerCarrito();
+      carrito.push({ nombre, precio });
+      guardarCarrito(carrito);
+      actualizarCarrito();
+    });
+  });
+
+  // Ejecutar al cargar la página
+  document.addEventListener('DOMContentLoaded', actualizarCarrito);
+
+  // Opcional: prevenir envío del formulario de contacto para pruebas
+  document.getElementById('form-contacto').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('¡Mensaje enviado con éxito!');
+    e.target.reset();
+  });
+</script>
 
 </body>
 </html>
