@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOHO | Estilo Bohemio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fffde7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffb4b4;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #6d1b7b;
+    }
+
+    .eslogan {
+      font-style: italic;
+      margin: 5px 0 15px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6d1b7b;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .seccion {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: #f5cfbd;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #f06292;
+    }
+
+    h2 {
+      color: #6d1b7b;
+    }
+
+    button {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    footer {
+      background-color: #ffb4b4;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #6d1b7b;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BOHO</h1>
+    <p class="eslogan">"Tu estilo comienza desde el cabello"</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="boho.html">Catálogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="contactos.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- CARRITO -->
+  <section class="seccion carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="items-carrito"></ul>
+    <p><strong>Total: $<span id="total">0.00</span></strong></p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="seccion" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Escríbenos para más información o para hacer tu pedido.</p>
+    <form>
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo" required />
+      <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BOHO. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      const lista = document.getElementById('items-carrito');
+
+      const item = document.createElement('li');
+      item.textContent = `${nombre} - $${precio.toFixed(2)}`;
+
+      const botonEliminar = document.createElement('button');
+      botonEliminar.textContent = 'Eliminar';
+      botonEliminar.style.marginLeft = '10px';
+      botonEliminar.onclick = function () {
+        lista.removeChild(item);
+        total -= precio;
+        document.getElementById('total').textContent = total.toFixed(2);
+      };
+
+      item.appendChild(botonEliminar);
+      lista.appendChild(item);
+
+      total += precio;
+      document.getElementById('total').textContent = total.toFixed(2);
+    }
+  </script>
+</body>
+</html>

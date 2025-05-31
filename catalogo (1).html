@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo | BOHO</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fffde7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffb4b4;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #6d1b7b;
+    }
+
+    .eslogan {
+      font-style: italic;
+      margin: 5px 0 15px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6d1b7b;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .catalogo {
+      max-width: 1100px;
+      margin: 30px auto;
+      background-color: #f5cfbd;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #f06292;
+    }
+
+    h2 {
+      color: #6d1b7b;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .producto {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .producto h3 {
+      color: #6d1b7b;
+      margin-top: 10px;
+    }
+
+    .producto p {
+      font-size: 0.95em;
+    }
+
+    button {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BOHO</h1>
+    <p class="eslogan">"Tu estilo comienza desde el cabello"</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="boho.html">Catálogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="contactos.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalogo">
+      <h2>Catálogo</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="imagenes/flor.webp" alt="Horquilla con flor">
+          <h3>Horquilla con flor</h3>
+          <p>Color plata con flor y detalles en negro.</p>
+          <p>Precio: $50</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/espada.webp" alt="Horquilla de espada">
+          <h3>Horquilla de espada</h3>
+          <p>Forma de espada con toques plateados y rojo.</p>
+          <p>Precio: $50</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/nudo.webp" alt="Horquilla de nudo">
+          <h3>Horquilla de nudo</h3>
+          <p>Diseño en forma de nudo elegante, color cobre.</p>
+          <p>Precio: $50</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/luna.webp" alt="Horquilla de luna">
+          <h3>Horquilla de luna</h3>
+          <p>Tono negro con una luna metálica.</p>
+          <p>Precio: $40</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/mariposa.webp" alt="Horquilla de mariposa">
+          <h3>Horquilla de mariposa</h3>
+          <p>Negro con mariposas en azul y negro.</p>
+          <p>Precio: $50</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/estrella.webp" alt="Horquilla de estrella">
+          <h3>Horquilla de estrella</h3>
+          <p>Color plata con estrella azul claro.</p>
+          <p>Precio: $50</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/cristal.webp" alt="Horquilla de cristal">
+          <h3>Horquilla de cristal</h3>
+          <p>Transparente con detalles de cristal brillante.</p>
+          <p>Precio: $60</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/perla.webp" alt="Horquilla con perlas">
+          <h3>Horquilla con perlas</h3>
+          <p>Elegante con pequeñas perlas blancas.</p>
+          <p>Precio: $55</p>
+          <button>Comprar</button>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/bohemia.webp" alt="Horquilla bohemia">
+          <h3>Horquilla bohemia</h3>
+          <p>Estilo boho con cuentas y plumas naturales.</p>
+          <p>Precio: $65</p>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
