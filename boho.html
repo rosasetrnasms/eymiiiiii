@@ -305,38 +305,23 @@
       <ul id="items-carrito"></ul>
       <p><strong>Total: $<span id="total">0.00</span></strong></p>
     </section>
-
-    <section class="seccion" id="contacto">
-      <h2>Contáctanos</h2>
-      <p>Escríbenos para más información o para hacer tu pedido.</p>
-      <form id="form-contacto">
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo" required />
-        <textarea rows="5" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p><strong>Teléfono:</strong> 664 333 3223</p>
-    <p><a href="mailto:eimyquinterot15@gmail.com">Correo: eimyquinterot15@gmail.com</a></p>
-    <p>&copy; 2025 BOHO. Todos los derechos reservados.</p>
-  </footer>
-
-<script>
-  // Obtener carrito de localStorage o inicializar
+<section class="seccion metodo-pago">
+  <h2>Método de Pago</h2>
+  <form id="form-pago">
+    <label><input type="radio" name="metodo" value="PayPal" required /> PayPal</label><br />
+    <label><input type="radio" name="metodo" value="Transferencia" /> Transferencia bancaria</label><br />
+    <label><input type="radio" name="metodo" value="Tarjeta" /> Tarjeta de crédito/débito</label><br />
+    <label><input type="radio" name="metodo" value="Contra entrega" /> Pago contra entrega</label><br />
+    <script>
   function obtenerCarrito() {
     const carritoJSON = localStorage.getItem('carrito');
     return carritoJSON ? JSON.parse(carritoJSON) : [];
   }
 
-  // Guardar carrito en localStorage
   function guardarCarrito(carrito) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }
 
-  // Actualizar vista del carrito
   function actualizarCarrito() {
     const carrito = obtenerCarrito();
     const lista = document.getElementById('items-carrito');
@@ -364,7 +349,28 @@
     totalSpan.textContent = total.toFixed(2);
   }
 
-  // Agregar eventos a botones de compra
+  // Formulario de método de pago
+  document.getElementById('form-pago').addEventListener('submit', e => {
+    e.preventDefault();
+    const metodoSeleccionado = document.querySelector('input[name="metodo"]:checked');
+    if (!metodoSeleccionado) {
+      alert('Por favor selecciona un método de pago.');
+      return;
+    }
+
+    const carrito = obtenerCarrito();
+    if (carrito.length === 0) {
+      alert('Tu carrito está vacío.');
+      return;
+    }
+
+    alert(`Has seleccionado pagar con: ${metodoSeleccionado.value}. Gracias por tu compra.`);
+    localStorage.removeItem('carrito');
+    actualizarCarrito();
+    e.target.reset();
+  });
+
+  // Botones de compra
   document.querySelectorAll('.producto button').forEach(boton => {
     boton.addEventListener('click', () => {
       const nombre = boton.getAttribute('data-nombre');
@@ -376,16 +382,38 @@
     });
   });
 
-  // Ejecutar al cargar la página
+  // Inicializar carrito al cargar
   document.addEventListener('DOMContentLoaded', actualizarCarrito);
 
-  // Opcional: prevenir envío del formulario de contacto para pruebas
+  // Formulario de contacto
   document.getElementById('form-contacto').addEventListener('submit', e => {
     e.preventDefault();
     alert('¡Mensaje enviado con éxito!');
     e.target.reset();
   });
 </script>
+    <button type="submit">Proceder al pago</button>
+  </form>
+</section>
+    <section class="seccion" id="contacto">
+      <h2>Contáctanos</h2>
+      <p>Escríbenos para más información o para hacer tu pedido.</p>
+      <form id="form-contacto">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo" required />
+        <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Teléfono:</strong> 664 333 3223</p>
+    <p><a href="mailto:eimyquinterot15@gmail.com">Correo: eimyquinterot15@gmail.com</a></p>
+    <p>&copy; 2025 BOHO. Todos los derechos reservados.</p>
+  </footer>
+
+
 
 </body>
 </html>
